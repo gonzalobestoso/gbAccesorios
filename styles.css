@@ -1,6 +1,19 @@
+* {
+    margin: 0;
+    padding: 0; }
+
 header{
     height: 56px;
     
 }
 
-/* From uiverse.io by @alexruix */
+.Card{
+    width: 18rem;
+}
+
+img{
+    height: 16rem;
+    width: 16rem;
+}
+
+

@@ -64,19 +64,21 @@ window.onload =function() {
 function agregarProductos(){
                productos.forEach((producto) =>{
                 //estructura
+                const columnas = document.createElement('div');
+                columnas.classList.add('col-12','col-sm-6', 'col-md-4', 'col-lg-3', 'mt-3');
                 const cardGeneral = document.createElement('div');
-                cardGeneral.classList.add('card','col-12', 'mt-2', 'mb-1' );
+                cardGeneral.classList.add('card', 'shadow', 'Card');
                 //card body
                 const cardBody = document.createElement('div');
                 cardBody.classList.add('card-body' );
                 //imagen
                 const cardImagen = document.createElement('img');
-                cardImagen.classList.add('img-fluid', 'd-flex', 'mx-auto');
+                cardImagen.classList.add('card-img-top', 'mx-auto');
                 cardImagen.setAttribute('src', producto.image);
                 //marca
                 const cardMarca = document.createElement('p');
                 cardMarca.classList.add('card-title', 'text-center', 'fw-bold', 'fs-2');
-                cardMarca.textContent = producto.title;                
+                cardMarca.textContent = producto.title.substr(0,10);                
                 //precio
                 const cardPrecio = document.createElement('p');
                 cardPrecio.classList.add('card-text', 'text-center', 'fs-1');
@@ -107,7 +109,8 @@ function agregarProductos(){
                 cardBody.appendChild(cardPrecio);
                 cardBody.appendChild(cardBoton);
                 cardGeneral.appendChild(cardBody);
-                DOMitems.appendChild(cardGeneral);
+                columnas.appendChild(cardGeneral);
+                DOMitems.appendChild(columnas);
             })        
 }
 
